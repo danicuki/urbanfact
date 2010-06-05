@@ -1,22 +1,19 @@
-<h1>Listing facts</h1>
+<h1><%= I18n.t("site.title") %></h1>
 
 <table>
   <tr>
-    <th>Description</th>
-    <th>Image url</th>
+    <th><%= I18n.t("site.fact") %></th>
     <th>Score</th>
-    <th>Hash tag</th>
+		<th>Quando?</th>
   </tr>
 
 <% @facts.each do |fact| %>
   <tr>
-    <td><%=h fact.description %></td>
-    <td><%=image_tag fact.image_url %></td>
+    <td><%=h fact.description %><br><%= link_to image_tag(fact.image_url), fact %>
+	  </td>
     <td><%=h fact.score %></td>
-    <td><%=h fact.hash_tag %></td>
-    <td><%= link_to 'Show', fact %></td>
-    <td><%= link_to 'Edit', edit_fact_path(fact) %></td>
-    <td><%= link_to 'Destroy', fact, :confirm => 'Are you sure?', :method => :delete %></td>
+		<td><%= fact.timestamp %></td>
+    <td><%= link_to "#{I18n.t("site.good")}", fact_good_path(fact) %> / <%= link_to "#{I18n.t("site.bad")}", fact_bad_path(fact) %></td>
   </tr>
 <% end %>
 </table>

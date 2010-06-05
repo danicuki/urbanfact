@@ -5,6 +5,14 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
+	
+	before_filter :set_language
+	
+	def set_language
+    available = %w{en pt-BR}
+    I18n.locale = request.preferred_language_from(available)
+	end
+
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 end

@@ -4,8 +4,7 @@
 </p>
 
 <p>
-  <b>Image url:</b>
-  <%=h @fact.image_url %>
+  <%= image_tag(@fact.image_url) %>
 </p>
 
 <p>
@@ -13,11 +12,19 @@
   <%=h @fact.score %>
 </p>
 
+<% if !@fact.metadatas.blank? %>
+<h3><%= I18n.t("site.comments") %></h3>
+  <% for metadata in @fact.metadatas %>
+    <p><%= metadata.comment %></p>
+  <% end %>
+<% else %>
+  
+<% end %>
+
+<% form_tag "#{facts_path}/#{@fact.id}/metadatas" do |f| -%>
 <p>
-  <b>Hash tag:</b>
-  <%=h @fact.hash_tag %>
+  Comentário<br />
+  <%= text_area :metadata, :comment, :size => "30x3" %>
 </p>
-
-
-<%= link_to 'Edit', edit_fact_path(@fact) %> |
-<%= link_to 'Back', facts_path %>
+<%= submit_tag %>
+<% end -%>

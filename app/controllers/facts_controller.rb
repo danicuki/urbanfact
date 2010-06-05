@@ -8,12 +8,18 @@ class FactsController < InheritedResources::Base
 		vote -1
 	end
 	
+	def show
+		super do |format|
+			@metadata = Metadata.new
+    end
+	end
+	
 	private 
 	def vote qtd
 		@facts = Fact.all
 		@fact = Fact.find(params[:fact_id])
 		@fact.score = @fact.score + qtd
 		@fact.save
-		render :index
+		redirect_to :facts
 	end
 end

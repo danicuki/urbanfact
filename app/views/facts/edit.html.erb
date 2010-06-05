@@ -20,6 +20,11 @@
     <%= f.text_field :hash_tag %>
   </p>
   <p>
+    <%= f.label :timestamp %><br />
+    <%= f.datetime_select :timestamp %>
+  </p>
+
+  <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>
