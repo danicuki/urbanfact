@@ -5,6 +5,8 @@ ActionController::Routing::Routes.draw do |map|
 		fact.resources :metadatas
   end
 
+	map.root :facts
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
