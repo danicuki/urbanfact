@@ -1,0 +1,23 @@
+<p>
+  <b>Description:</b>
+  <%=h @fact.description %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%=h @fact.image_url %>
+</p>
+
+<p>
+  <b>Score:</b>
+  <%=h @fact.score %>
+</p>
+
+<p>
+  <b>Hash tag:</b>
+  <%=h @fact.hash_tag %>
+</p>
+
+
+<%= link_to 'Edit', edit_fact_path(@fact) %> |
+<%= link_to 'Back', facts_path %>

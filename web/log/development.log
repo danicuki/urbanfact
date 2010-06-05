@@ -1,0 +1,22 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (226.0ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSHOW KEYS FROM `schema_migrations`[0m
+  [4;36;1mSQL (264.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateFacts (20100605173632)
+  [4;35;1mSQL (111.0ms)[0m   [0mCREATE TABLE `facts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` varchar(255), `image_url` varchar(255), `score` int(11), `hash_tag` varchar(255), `lat` int(11), `lng` int(11), `timestamp` date, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100605173632')[0m
+Migrating to CreateMetadatas (20100605173844)
+  [4;35;1mSQL (66.7ms)[0m   [0mCREATE TABLE `metadatas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100605173844')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (27.7ms)[0m   [0;1mSHOW FIELDS FROM `facts`[0m
+  [4;35;1mSQL (5.3ms)[0m   [0mdescribe `facts`[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mSHOW KEYS FROM `facts`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `metadatas`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `metadatas`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW KEYS FROM `metadatas`[0m

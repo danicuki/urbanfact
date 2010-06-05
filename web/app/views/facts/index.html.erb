@@ -1,0 +1,26 @@
+<h1>Listing facts</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Image url</th>
+    <th>Score</th>
+    <th>Hash tag</th>
+  </tr>
+
+<% @facts.each do |fact| %>
+  <tr>
+    <td><%=h fact.description %></td>
+    <td><%=h fact.image_url %></td>
+    <td><%=h fact.score %></td>
+    <td><%=h fact.hash_tag %></td>
+    <td><%= link_to 'Show', fact %></td>
+    <td><%= link_to 'Edit', edit_fact_path(fact) %></td>
+    <td><%= link_to 'Destroy', fact, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New fact', new_fact_path %>
