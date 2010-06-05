@@ -35,3 +35,7 @@ set :use_sudo, false
 
 role :web, "187.45.244.54"
 role :app, "187.45.244.54"
+
+deploy.task :restart, :roles => :app do
+  run "touch #{current_path}/tmp/restart.txt"
+end
