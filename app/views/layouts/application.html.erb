@@ -2,13 +2,13 @@
 <html>
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+				<%= stylesheet_link_tag :all, :cache => true %>
         <title>#urbanfact</title>
     </head>
     <body>
         <div id="div_main">
             <div id="div_header">
-                <img id="img_logo" src="images/logo_en.png" />
+								<%= image_tag "logo_en.png" %>
                 <p id="p_subtitle">
                     show the best and the worst in your city
                 </p>
@@ -16,32 +16,16 @@
             <div id="div_menu">
                 <ul>
                     <li>
-                        <a href="facts.html">All The Facts</a>
+											<%= link_to "All the facts", :root, :class => select_menu("/") %>
                     </li>
                     <li>
                         <a href="map.html">Fact Map</a>
                     </li>
-                    <li>
-                        <a href="#" class="selected_menu">Look what this guy did with...</a>
-                    </li>
+										<%= yield :menu %>
                 </ul>
             </div>
             <div id="div_content">
-                here goes the content
-                <br/>
-                more content
-                here goes the content
-                <br/>
-                more content
-                here goes the content
-                <br/>
-                more content
-                here goes the content
-                <br/>
-                more content
-                here goes the content
-                <br/>
-                more content
+                <%= yield %>
             </div>
         </div>
     </body>

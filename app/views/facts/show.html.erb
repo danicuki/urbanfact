@@ -1,3 +1,8 @@
+<% content_for :menu do -%>
+	<li>
+      <a href="#" class="selected_menu"><%= @fact.description %>...</a>
+  </li>
+<% end -%>
 <p>
   <b>Description:</b>
   <%=h @fact.description %>
