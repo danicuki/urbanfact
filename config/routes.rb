@@ -1,5 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :facts
+  map.resources :facts do |fact|
+  	fact.good "good/", :controller => "facts", :action => "good"
+	  fact.bad "bad/", :controller => "facts", :action => "bad" 
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
 

@@ -11,7 +11,7 @@
 <% @facts.each do |fact| %>
   <tr>
     <td><%=h fact.description %></td>
-    <td><%=h fact.image_url %></td>
+    <td><%=image_tag fact.image_url %></td>
     <td><%=h fact.score %></td>
     <td><%=h fact.hash_tag %></td>
     <td><%= link_to 'Show', fact %></td>
