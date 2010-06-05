@@ -3,6 +3,7 @@ set :repository,  "git://github.com/danicuki/urbanfact.git"
 set :deploy_to, "/home/urbanfact"
 set :user, "root"
 set :scm, :git
+set :use_sudo, false
 
 # If you have previously been relying upon the code to start, stop 
 # and restart your mongrel application, or if you rely on the database
@@ -33,3 +34,4 @@ set :scm, :git
 # see a full list by running "gem contents capistrano | grep 'scm/'"
 
 role :web, "187.45.244.54"
+role :app, "187.45.244.54"
