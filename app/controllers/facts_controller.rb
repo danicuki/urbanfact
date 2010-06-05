@@ -1,5 +1,10 @@
 class FactsController < InheritedResources::Base
 
+	def index
+		order = params[:order] || "timestamp desc"
+		@facts = Fact.all(:order => order)
+	end
+
 	def good
 		vote 1
 	end
