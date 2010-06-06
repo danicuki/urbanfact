@@ -6,7 +6,13 @@ Created on 05/06/2010
 
 @author: M
 '''
-import json
+try:
+    import json
+except:
+    import simplejson as json
+    
+    
+    
 import HttpSlave
 import urllib;
 
