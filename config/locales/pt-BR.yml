@@ -15,3 +15,6 @@ pt-BR:
     time:
         formats: 
             long: "%d/%m/%y %H:%M"
+    date:
+        formats: 
+            long: "%d/%m/%y"
