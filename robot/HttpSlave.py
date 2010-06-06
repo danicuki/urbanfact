@@ -15,7 +15,7 @@ class HttpSlave:
     global theHeaders
     
     def __init__( self ):
-        self.cacheEnable = False
+        self.cacheEnable = True
         self.urlopen = urllib2.urlopen
         self.cj= cookielib.LWPCookieJar()
         self.Request = urllib2.Request
