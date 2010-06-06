@@ -8,14 +8,24 @@ function load_map(){
         center: city_center,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
+    for (i in markers) {
+        var m = markers[i];
+        if (m && m.lat) {
+            add_marker(m.lat, m.lng, m.description, m.url);
+        }
+    }
 }
 
-function add_marker(lat, lng){
-	latlng = new Array(lat, lng);
-    marker = new google.maps.Marker({
-        position: new google.maps.LatLng(lat, lng),
+function add_marker(lat, lng, title, url){
+    var latlng = new google.maps.LatLng(lat, lng);
+    var marker = new google.maps.Marker({
+        position: latlng,
         map: map,
-    });    
+        title: title
+    });
+    google.maps.event.addListener(marker, 'click', function(event) {
+	    window.location.href = url;		
+	});
 }
 
 function adjust_map_height(){
