@@ -25,6 +25,10 @@ class FactsController < InheritedResources::Base
 		@fact = Fact.find(params[:fact_id])
 		@fact.score = @fact.score + qtd
 		@fact.save
-		redirect_to :facts
+		respond_to do |format|
+        format.html { redirect_to :facts }
+        format.js { render :json => @fact }
+    end
+    
 	end
 end

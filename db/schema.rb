@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(:version => 20100606124010) do
   create_table "facts", :force => true do |t|
     t.string   "description"
     t.string   "image_url"
-    t.integer  "score"
+    t.integer  "score",       :null => false
     t.string   "hash_tag"
     t.float    "lat"
     t.float    "lng"
