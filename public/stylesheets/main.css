@@ -113,6 +113,16 @@ body, p, div, li {
     border: none;
 }
 
+.div_map_infowindow {
+	text-align:center;
+}
+
+.img_map_scaled {
+    max-width: 150px;
+    max-height: 100px;
+    border: none;
+}
+
 .div_map {
 }
 
