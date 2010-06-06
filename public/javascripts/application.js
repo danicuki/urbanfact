@@ -1,11 +1,3 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
-// $(document).ready(function(){
-// 	$("#good").click(function() {
-// 		alert("oi");
-// 		return false;
-// 	});
-// });
 
 $(document).ready(function(){
     // Uses the new live method in jQuery 1.3+
@@ -21,6 +13,10 @@ $(document).ready(function(){
                 success: function(response) {
 					resp = eval('(' + response + ')');
                     $('#fact_' + resp.fact.id + '_score').html(resp.fact.score);
+					$('#fact_' + resp.fact.id + '_score').removeClass("score_good");
+					$('#fact_' + resp.fact.id + '_score').removeClass("score_bad");
+					$('#fact_' + resp.fact.id + '_score').removeClass("score_neutral");
+					$('#fact_' + resp.fact.id + '_score').addClass("score_" + resp.fact.score_kind);
                 }
             });
         return false;

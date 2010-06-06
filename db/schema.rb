@@ -9,11 +9,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100606124010) do
+ActiveRecord::Schema.define(:version => 20100606151653) do
 
   create_table "facts", :force => true do |t|
     t.string   "description"
-    t.string   "image_url"
+    t.text     "image_url"
     t.integer  "score",       :default => 0, :null => false
     t.string   "hash_tag"
     t.float    "lat"
