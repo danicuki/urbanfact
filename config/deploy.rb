@@ -37,5 +37,8 @@ role :web, "187.45.244.54"
 role :app, "187.45.244.54"
 
 deploy.task :restart, :roles => :app do
+	run "chmod 777 #{current_path}/public/stylesheets"
+	run "chmod 777 #{current_path}/public/javascripts"
+	
   run "touch #{current_path}/tmp/restart.txt"
 end

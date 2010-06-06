@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
 	def set_language
     available = %w{en pt-BR}
     I18n.locale = request.preferred_language_from(available)
+		I18n.locale = params[:locale] if params[:locale]
 	end
 
   # Scrub sensitive parameters from your log
