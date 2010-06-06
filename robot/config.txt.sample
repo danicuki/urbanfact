@@ -1,7 +1,11 @@
-[tweeter]
-username=RHoKsp
-password=Chester!
-useCache=True
+[global]
+usecache=True
+
+
+;[tweeter]
+;username=RHoKsp
+;password=Chester!
+
 
 [db]
 server =127.0.0.1

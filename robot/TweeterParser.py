@@ -71,7 +71,7 @@ def FixDate( tweeterDate):
     
     time = dateArray[4]
      
-    sqlTimeStamp = "%d-%d-%d %s" % ( year , month , day , time )
+    sqlTimeStamp = "%04d-%02d-%02d %s" % ( year , month , day , time )
     return sqlTimeStamp
     
         

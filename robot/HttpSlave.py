@@ -3,7 +3,7 @@
 import os.path , sys ,cookielib , urllib2 , urlparse, time , hashlib
 
 #COOKIEFILE = 'cookies.lwp'    
-
+  
 class HttpSlave:
 
     global urlopen
@@ -13,9 +13,27 @@ class HttpSlave:
 
     global lastHeader
     global theHeaders
+
+    
+
+    
+
+    def ConfigCache(self):
+        """ Please make me a global singleton"""
+        import ConfigParser
+        config = ConfigParser.ConfigParser()
+        config.read('config.txt')
+        
+        usecache = config.get('global' , "usecache").lower()
+        if usecache=="true":
+            self.cacheEnable=True
+        else:
+            self.cacheEnable=False
+       
+        
     
     def __init__( self ):
-        self.cacheEnable = True
+        self.ConfigCache()
         self.urlopen = urllib2.urlopen
         self.cj= cookielib.LWPCookieJar()
         self.Request = urllib2.Request
@@ -39,11 +57,7 @@ class HttpSlave:
         self.opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cj))
         urllib2.install_opener(self.opener)
 
-    def EnableCache(self):
-        self.cacheEnable = True
-    
-    def DisableCache(self):
-        self.cacheEnable = False
+
 
     def Fetch( self , url , fileName="" , data = "" , headers = { }  ) :
         """
