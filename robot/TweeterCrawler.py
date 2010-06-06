@@ -9,7 +9,7 @@ Created on 05/06/2010
 try:
     import json
 except:
-    import simplejson 
+    import simplejson as json
     
     
     
