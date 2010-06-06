@@ -113,12 +113,12 @@ body, p, div, li {
 
 .score {
     display: inline;
-	position:relative;
-	top:-14px;
+    position: relative;
+    top: -14px;
     font-weight: bold;
     font-size: 24px;
-	padding-left:4px;
-	padding-right:4px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 .score_good {
@@ -131,4 +131,28 @@ body, p, div, li {
 
 .score_neutral {
     color: black;
+}
+
+.div_comment {
+    clear: both;
+    margin: 4px;
+    -moz-border-radius: 8px 8px 8px 8px;
+    background-color: #FFFFFF;
+    margin-bottom: 18px !important;
+    padding-left: 2px;
+}
+
+.comment_text {
+    margin-bottom: -12px;
+}
+
+.comment_timestamp {
+	color:grey;
+    font-size: 10px;
+	font-style: italic;
+}
+
+.textarea_comment {
+	width:99%;
+	height:200px;
 }

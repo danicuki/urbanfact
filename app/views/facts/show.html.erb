@@ -21,7 +21,10 @@
 <% if !@fact.metadatas.blank? %>
 <h3><%= I18n.t("site.comments") %></h3>
   <% for metadata in @fact.metadatas %>
-    <p><%= metadata.comment %></p>
+    <div class="div_comment">
+    	<p class="comment_text"><%= metadata.comment %></p>
+    	<p class="comment_timestamp"><%= metadata.updated_at %></p>
+    </div>
   <% end %>
 <% else %>
   
@@ -30,7 +33,7 @@
 <% form_tag "#{facts_path}/#{@fact.id}/metadatas" do |f| -%>
 <p>
   <%= I18n.t("site.comment") %><br />
-  <%= text_area :metadata, :comment, :size => "30x3" %>
+  <%= text_area :metadata, :comment, :size => "30x3", :class => "textarea_comment" %>
 </p>
 <%= submit_tag I18n.t("site.send")%>
 <% end -%>
