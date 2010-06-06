@@ -94,6 +94,15 @@ body, p, div, li {
     font-size: 16px;
 }
 
+.div_list_rate {
+    margin-top: 18px !important;
+    padding: 8px;
+}
+
+.div_share {
+    margin-left: 48px;
+}
+
 .img_good_bad {
     border-style: none;
 }
