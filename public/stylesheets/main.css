@@ -17,6 +17,7 @@
 }
 
 #div_menu {
+	padding-left:12px;
     margin-bottom: -12px;
 }
 
@@ -51,6 +52,7 @@
     margin-top: 0px;
     padding: 4px;
     overflow: auto;
+	background: url("/images/shade.jpg") repeat-x scroll 0 0 #EBF3FF;
 }
 
 body, p, div, li {
@@ -60,36 +62,39 @@ body, p, div, li {
 
 #div_menu li a.selected_menu {
     color: black;
-    background-color: white;
+    background-color: #CBD3FF;
     border: 2px solid black;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #CBD3FF;
     margin-right: -5px;
 }
 
 .div_list_row {
-	clear:both;
-	border: 4px solid black;
-	margin: 4px;
+    clear: both;
+    margin: 4px;
+    -moz-border-radius: 8px 8px 8px 8px;
+    background-color: #FFFFFF;
+    margin-bottom: 18px !important;
+    padding: 8px;
 }
 
 .div_list_image {
-	min-width: 240px;
-	text-align: center;
-	display:inline-block;
+    min-width: 240px;
+    text-align: center;
+    display: inline-block;
     margin: 2px;
 }
 
 .div_list_content {
-	vertical-align:top;
-	display:inline-block;
+    vertical-align: top;
+    display: inline-block;
 }
 
 .div_list_description {
-	font-size:16px;
+    font-size: 16px;
 }
 
 .img_list_scaled {
     max-width: 240px;
     max-height: 320px;
-	border: none;
+    border: none;
 }
