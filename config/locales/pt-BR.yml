@@ -1,14 +1,17 @@
 pt-BR:
-  site:
-    hashtag: "fatourbano"
-    title: "Fato Urbano"
-    fact: "Fato"
-    good: "Bom"
-    bad: "Ruim"
-    comment: "Adicione seu comentário"
-    comments: "Comentários"
-    logo: "logo_pt.png"
-    subtitle: "compartilhe o melhor e o pior da sua cidade"
-    fact_map: "Mapa de Fatos"
-    all_facts: "Todos os Fatos"
-    send: "enviar"
+    site:
+        hashtag: "fatourbano"
+        title: "Fato Urbano"
+        fact: "Fato"
+        good: "Bom"
+        bad: "Ruim"
+        comment: "Adicione seu comentário"
+        comments: "Comentários"
+        logo: "logo_pt.png"
+        subtitle: "compartilhe o melhor e o pior da sua cidade"
+        fact_map: "Mapa de Fatos"
+        all_facts: "Todos os Fatos"
+        send: "enviar"
+    time:
+        formats: 
+            long: "%d/%m/%y %H:%M"

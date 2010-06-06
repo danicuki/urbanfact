@@ -4,9 +4,10 @@
 		<div class="div_list_description"><%=h fact.description %></div>
 		<div class="div_list_timestamp"><%= l fact.timestamp, :format => :long %></div>
 		<div class="div_list_rate">
-			<%= link_to image_tag("/images/good.png", :class => :img_good_bad, :alt => "#{I18n.t("site.good")}"), fact_good_path(fact) %>
-			<div class="score score_<%= fact.score_kind %>"><%= fact.score %></div>
-			<%= link_to image_tag("/images/bad.png", :class => :img_good_bad, :alt => "#{I18n.t("site.bad")}"), fact_bad_path(fact) %>
+			
+			<%= link_to image_tag("/images/good.png", :class => :img_good_bad, :alt => "#{I18n.t("site.bad")}"), fact_good_path(fact), {:id => "vote_link"} %>
+			<div class="score score_<%= fact.score_kind %>" id="fact_<%= fact.id %>_score"><%= fact.score %></div>
+			<%= link_to image_tag("/images/bad.png", :class => :img_good_bad, :alt => "#{I18n.t("site.bad")}"), fact_bad_path(fact), {:id => "vote_link"} %>
 		</div>
 	</div>
 <% if show_share  %>
