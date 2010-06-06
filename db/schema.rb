@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100606034257) do
+ActiveRecord::Schema.define(:version => 20100606124010) do
 
   create_table "facts", :force => true do |t|
     t.string   "description"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(:version => 20100606034257) do
     t.string   "hash_tag"
     t.float    "lat"
     t.float    "lng"
-    t.date     "timestamp"
+    t.datetime "timestamp"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
