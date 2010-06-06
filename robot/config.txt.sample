@@ -1,0 +1,9 @@
+[tweeter]
+username=RHoKsp
+password=Chester!
+
+[db]
+server =127.0.0.1
+username =root
+password =Chester!
+dbname = urbanfacts
