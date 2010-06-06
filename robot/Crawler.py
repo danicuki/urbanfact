@@ -95,17 +95,14 @@ VALUES (            "%s"        , "%s"        , "%s"     , %s  , %s  , "%s" ,  0
             
         
     def CrawlData(self):
-        query = "SELECT hashtag FROM hashtags WHERE hashtag = '%s' " % hashTag
+        query = "SELECT hashtag FROM hashtags "
         
-        #cursor = self.db.cursor()
-        #cursor.execute( query )
-        #rows = cursor.fetchall()
-        #for row in rows:
-        #    print row[0]
-        #cursor.close()
-        
-        self._ParseOneHashTag("urbanFact")
-        self._ParseOneHashTag("fatoUrbano")
+        cursor = self.db.cursor()
+        cursor.execute( query )
+        rows = cursor.fetchall()
+        for row in rows:
+            self._ParseOneHashTag( row[0] )
+        cursor.close()
  
 blah = Crawler()
 blah.CrawlData()
