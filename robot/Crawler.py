@@ -39,19 +39,22 @@ class Crawler(object):
         now = datetime.datetime.now()
         return "%04d-%02d-%02d %02d:%02d:%02d" % ( now.year , now.month , now.day , now.hour , now.minute, now.second )
     
-    def _SaveToFile( self, filename , theValue ):
-        f = file( filename , "w" )
-        f.write(theValue)
-        f.close()
+
+    def _SaveDataInSql( self, hashTag , theValue ):
+        query = "UPDATE hashtags SET last_tweet_id = '%s' WHERE hashTag='%s' " % ( theValue , hashTag ) 
+        cursor = self.db.cursor()
+        cursor.execute(query)
+        self.db.commit()             
+   
+    def _LoadDataFromSql( self, hashTag ):
+        query = "SELECT last_tweet_id FROM hashtags WHERE hashtag = '%s' " % hashTag
         
-    def _LoadFromFile( self, filename ):
-        try:
-            f = io.open( filename , "r" )
-            x = f.readline()
-            f.close()
-            return x
-        except:
-            return 0
+        cursor = self.db.cursor()
+        cursor.execute( query )
+        row = cursor.fetchone()
+        output= row[0]
+        cursor.close()
+        return output
 
 
     def _ParseOneHashTag(self , hashTag):
@@ -59,16 +62,16 @@ class Crawler(object):
 INSERT INTO facts ( description , image_url , hash_tag , lat , lng , timestamp , score , created_at , updated_at)
 VALUES (            "%s"        , "%s"        , "%s"     , %s  , %s  , "%s" ,  0 , "%s" , "%s"  )
                 """
-        tweeterData = self.tweeter.CrawlHashTag(hashTag , self._LoadFromFile( hashTag + ".cache2" ) )
+        tweeterData = self.tweeter.CrawlHashTag(hashTag , self._LoadDataFromSql( hashTag ) )
         tweets = tweeterData["results"]
         now = self._SqlNow()
         
         if len(tweets) == 0:
             return;
-        maxId = "%s" % tweets[0]["id"]
-
-        self._SaveToFile( hashTag + ".cache2" , maxId )
-        #print_r( tweeterData ) 
+        maxId = str( tweets[0]["id"] )
+        
+        self._SaveDataInSql( hashTag , maxId )
+        
 
         for tweet in tweets:
             parsedData = TweeterParser( tweet )
