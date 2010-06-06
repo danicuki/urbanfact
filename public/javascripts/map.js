@@ -38,6 +38,10 @@ function add_marker(lat, lng, title, url, kind, photo){
         }
         infowindow.open(map, marker);
     });
+    google.maps.event.addListener(marker, 'click', function(event){
+        window.location.href = url;
+    });
+	
 }
 
 
