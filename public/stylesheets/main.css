@@ -94,6 +94,10 @@ body, p, div, li {
     font-size: 16px;
 }
 
+.img_good_bad {
+    border-style: none;
+}
+
 .img_list_scaled {
     max-width: 240px;
     max-height: 320px;
@@ -108,13 +112,13 @@ body, p, div, li {
 }
 
 .score_good {
-	color: green;
+    color: green;
 }
 
 .score_bad {
-	color: red;
+    color: red;
 }
 
 .score_neutral {
-	color: black;
+    color: black;
 }
