@@ -106,3 +106,15 @@ body, p, div, li {
 #map_canvas {
     height: 100%;
 }
+
+.score_good {
+	color: green;
+}
+
+.score_bad {
+	color: red;
+}
+
+.score_neutral {
+	color: black;
+}
