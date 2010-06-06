@@ -6,6 +6,19 @@
 				<%= stylesheet_link_tag :all, :cache => true %>
 				<%= javascript_include_tag "application" %>
         <title>#<%= I18n.t("site.hashtag") %></title>
+				<script type="text/javascript">
+
+				  var _gaq = _gaq || [];
+				  _gaq.push(['_setAccount', 'UA-474621-7']);
+				  _gaq.push(['_trackPageview']);
+
+				  (function() {
+				    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+				  })();
+
+				</script>
     </head>
     <body>
         <div id="div_main">
@@ -15,6 +28,11 @@
                     <%= I18n.t("site.subtitle") %>
                 </p>
             </div>
+						<div id="div_header_links">
+							<p align="right"><%= link_to t("site.about"), :controller => :about %></p>							
+						</div>
+
+
             <div id="div_menu">
                 <ul>
                     <li>

@@ -12,6 +12,14 @@ pt-BR:
         fact_map: "Mapa de Fatos"
         all_facts: "Todos os Fatos"
         send: "enviar"
+        about: Sobre
+        about_1: "Você já viu alguém fazendo algo de ruim ou de bom para sua cidade? Então, tire uma foto e envie para o Twitter usando a hashtag #fatourbano."
+        about_2: "Nós vamos adicionar sua foto ao nosso site, onde outras pessoas podem votar, comentar e compartilhar com os amigos de suas redes sociais. Se seu tweet tiver geo-localização, nós iremos adicioná-lo ao mapa de fatos."
+        about_3: "Valorizando os atos positivos servirá de exemplo para outros. Por outro lado, expondo os maus atos das pessoas, esperamos desencorajar que esses atos se repitam."
+        team: Time
+        technology: Tecnologias
+        technology_1: "Python, Ruby on Rails, JavaScript e Google Maps. <a href=\"http://github.com/danicuki/urbanfact\">Baixe o código fonte</a>."
+        
     time:
         formats: 
             long: "%d/%m/%y %H:%M"
