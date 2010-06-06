@@ -7,7 +7,7 @@
 	<script type="text/javascript">
 		var markers = [
 			<% @facts.each do |fact| %>
-						{lat: "<%=fact.lat%>", lng: "<%=fact.lng%>", description: "<%=escape_javascript(fact.description)%>", url: "<%=url_for fact%>", kind: "<%= fact.score_kind %>" },
+						{lat: "<%=fact.lat%>", lng: "<%=fact.lng%>", description: "<%=escape_javascript(fact.description)%>", url: "<%=url_for fact%>", kind: "<%= fact.score_kind %>", image_url: "<%= fact.image_url %>" },
 			<% end %>
 						{}						
 					  ];
