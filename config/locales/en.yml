@@ -3,8 +3,14 @@
 
 en:
   site:
+    hashtag: "urbanfact"
     title: "Urban Fact"
     fact: "Fact"
     good: "Good"
     bad: "Bad"
+    comment: "Comment"
     comments: "Comments"
+    logo: "logo_en.png"
+    subtitle: share the best and the worst in your city
+    fact_map: "Facts Map"
+    all_facts: "All the Facts"
