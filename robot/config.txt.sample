@@ -1,8 +1,7 @@
 [tweeter]
 username=RHoKsp
 password=Chester!
-useCache=False
-
+useCache=True
 
 [db]
 server =127.0.0.1
