@@ -17,7 +17,7 @@ class Crawler(object):
 
     def _DbConnect(self):
         config = ConfigParser.ConfigParser()
-        config.read('config.txt')
+        config.read('../config.txt')
         server = config.get('db' , "server")
         username = config.get('db', "username" )
         password = config.get('db', "password" ) 
@@ -39,7 +39,7 @@ VALUES (            "%s"        , "%s"        , "%s"     , %s  , %s  , "%s" )
         
         for tweet in tweets:
             parsedData = TweeterParser( tweet )
-            if parsedData.HasImage():
+            if True: #parsedData.HasImage():
                 query = forma % ( parsedData.GetDescription() , 
                                   parsedData.GetImageUrl() ,
                                   hashTag ,
