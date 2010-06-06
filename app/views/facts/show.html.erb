@@ -29,8 +29,8 @@
 
 <% form_tag "#{facts_path}/#{@fact.id}/metadatas" do |f| -%>
 <p>
-  <%= I18n.t("site.comment") %><<br />
+  <%= I18n.t("site.comment") %><br />
   <%= text_area :metadata, :comment, :size => "30x3" %>
 </p>
-<%= submit_tag %>
+<%= submit_tag I18n.t("site.send")%>
 <% end -%>
