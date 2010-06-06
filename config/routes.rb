@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   end
 
 	map.root :facts
+	map.connect 'map', :controller => 'map', :action => 'index'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

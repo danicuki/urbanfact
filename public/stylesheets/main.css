@@ -98,3 +98,10 @@ body, p, div, li {
     max-height: 320px;
     border: none;
 }
+
+.div_map {
+}
+
+#map_canvas {
+	height:100%;
+}

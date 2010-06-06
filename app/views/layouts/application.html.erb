@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>        
 				<%= stylesheet_link_tag :all, :cache => true %>
         <title>#<%= I18n.t("site.hashtag") %></title>
     </head>
@@ -19,7 +20,7 @@
 											<%= link_to "#{I18n.t("site.all_facts")}", :root, :class => select_menu([root_path, facts_path]) %>
                     </li>
                     <li>
-                        <a href="map.html"><%= I18n.t("site.fact_map") %></a>
+						                    <%= link_to "#{I18n.t("site.fact_map")}", '/map', :class => select_menu(["/map"]) %>
                     </li>
 										<%= yield :menu %>
                 </ul>
