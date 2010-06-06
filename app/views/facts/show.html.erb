@@ -29,7 +29,7 @@
 
 <% form_tag "#{facts_path}/#{@fact.id}/metadatas" do |f| -%>
 <p>
-  Comentário<br />
+  <%= I18n.t("site.comment") %><<br />
   <%= text_area :metadata, :comment, :size => "30x3" %>
 </p>
 <%= submit_tag %>

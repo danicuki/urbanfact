@@ -3,23 +3,23 @@
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 				<%= stylesheet_link_tag :all, :cache => true %>
-        <title>#urbanfact</title>
+        <title>#<%= I18n.t("site.hashtag") %></title>
     </head>
     <body>
         <div id="div_main">
             <div id="div_header">
-								<%= image_tag "logo_en.png" %>
+								<%= image_tag "#{I18n.t("site.logo")}" %>
                 <p id="p_subtitle">
-                    show the best and the worst in your city
+                    <%= I18n.t("site.subtitle") %>
                 </p>
             </div>
             <div id="div_menu">
                 <ul>
                     <li>
-											<%= link_to "All the facts", :root, :class => select_menu([root_path, facts_path]) %>
+											<%= link_to "#{I18n.t("site.all_facts")}", :root, :class => select_menu([root_path, facts_path]) %>
                     </li>
                     <li>
-                        <a href="map.html">Fact Map</a>
+                        <a href="map.html"><%= I18n.t("site.fact_map") %></a>
                     </li>
 										<%= yield :menu %>
                 </ul>
