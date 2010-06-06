@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100606151653) do
+ActiveRecord::Schema.define(:version => 20100606153950) do
 
   create_table "facts", :force => true do |t|
     t.string   "description"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(:version => 20100606151653) do
     t.float    "lat"
     t.float    "lng"
     t.datetime "timestamp"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hashtags", :force => true do |t|
+    t.string   "hashtag"
+    t.string   "last_tweet_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
