@@ -5,7 +5,7 @@ Created on 06/06/2010
 '''
 import re
 
-_urlFinder = re.compile("(https?://[\w\d_\.]{2,}/[\w\d_\./]*)") 
+_urlFinder = re.compile("(https?://[\w\d_\.-]{2,}/[\w\d_\./-]*)") 
 
 def UrlGrabber( stringWithUrl ):
     """returns either None or the first URL found"""
