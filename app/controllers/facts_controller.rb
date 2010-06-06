@@ -27,7 +27,7 @@ class FactsController < InheritedResources::Base
 		@fact.save
 		respond_to do |format|
         format.html { redirect_to :facts }
-        format.js { render :json => @fact }
+        format.js { render :json => {:fact => {:score_kind => @fact.score_kind}.merge(@fact.attributes)}	 }
     end
     
 	end

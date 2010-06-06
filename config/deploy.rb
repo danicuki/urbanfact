@@ -41,7 +41,7 @@ deploy.task :restart, :roles => :app do
 	run "chmod 777 #{current_path}/public/javascripts"
 	
   run "touch #{current_path}/tmp/restart.txt"
-	run "ln -s #{current_path}/../shared/config.txt #{current_path}/robot/config.txt"
-	run "ln -s #{current_path}/../shared/database.yml #{current_path}/config/database.yml"
+  run "cp #{deploy_to}/shared/config.txt #{release_path}/robot/"
+  run "cp #{deploy_to}/shared/database.yml #{release_path}/config/database.yml"
 	
 end
