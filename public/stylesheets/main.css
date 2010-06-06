@@ -1,4 +1,5 @@
 #img_logo {
+    border-style: none;
 }
 
 #p_subtitle {
@@ -17,7 +18,7 @@
 }
 
 #div_menu {
-	padding-left:12px;
+    padding-left: 12px;
     margin-bottom: -12px;
 }
 
@@ -52,7 +53,7 @@
     margin-top: 0px;
     padding: 4px;
     overflow: auto;
-	background: url("/images/shade.jpg") repeat-x scroll 0 0 #EBF3FF;
+    background: url("/images/shade.jpg") repeat-x scroll 0 0 #EBF3FF;
 }
 
 body, p, div, li {
@@ -103,5 +104,5 @@ body, p, div, li {
 }
 
 #map_canvas {
-	height:100%;
+    height: 100%;
 }
