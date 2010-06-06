@@ -3,7 +3,7 @@
     <div class="div_list_image"><%= link_to image_tag(fact.image_url, :class => "img_list_scaled"), fact %></div>
     <div class="div_list_content">
       <div class="div_list_description"><%=h fact.description %></div>
-	  <div class="div_list_timestamp">dummy_timestamp<%= fact.timestamp %></div>
+	  <div class="div_list_timestamp"><%= fact.timestamp %></div>
 	  <div class="div_list_rate">
 	    <%= link_to "#{I18n.t("site.good")}", fact_good_path(fact) %> / <%= link_to "#{I18n.t("site.bad")}", fact_bad_path(fact) %>
   	  </div>

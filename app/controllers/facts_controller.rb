@@ -2,7 +2,7 @@ class FactsController < InheritedResources::Base
 
 	def index
 		order = params[:order] || "timestamp desc"
-		@facts = Fact.all(:order => order)
+		@facts = Fact.find(:all, :conditions => {:hash_tag => I18n.t("site.hashtag")}, :order => order)
 	end
 
 	def good
