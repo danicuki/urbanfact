@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  hashtag: MyString
+  last_tweet_id: MyString
+
+two:
+  hashtag: MyString
+  last_tweet_id: MyString
