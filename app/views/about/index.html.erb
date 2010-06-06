@@ -1,4 +1,8 @@
-<h3><%= t("site.about") %></h3>
+<% content_for :menu do -%>
+	<li>
+      <a href="#" class="selected_menu"><%= t("site.about") %></a>
+  </li>
+<% end -%>
 
 <p><%= t("site.about_1") %></p>
 <p><%= t("site.about_2") %></p>
