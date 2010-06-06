@@ -6,12 +6,9 @@
 	  <div class="div_list_timestamp"><%= fact.timestamp %></div>
 	  <div class="div_list_rate">
 	  	<%= link_to image_tag("/images/good.png", :class => :img_good_bad, :alt => "#{I18n.t("site.good")}"), fact_good_path(fact) %>
-	  	<span class="score_<%= fact.score_kind %>"><%= fact.score %></span>
+	  	<div class="score score_<%= fact.score_kind %>"><%= fact.score %></div>
 	  	<%= link_to image_tag("/images/bad.png", :class => :img_good_bad, :alt => "#{I18n.t("site.bad")}"), fact_bad_path(fact) %>
   	  </div>
 	</div>
   </div>
 <% end %>
-<br />
-
-<%= link_to 'New fact', new_fact_path %>
