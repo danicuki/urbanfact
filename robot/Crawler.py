@@ -12,6 +12,7 @@ import TweeterCrawler
 from TweeterParser import TweeterParser
 import HttpSlave
 import datetime
+import io
 
 class Crawler(object):
     db = None
@@ -38,16 +39,37 @@ class Crawler(object):
         now = datetime.datetime.now()
         return "%04d-%02d-%02d %02d:%02d:%02d" % ( now.year , now.month , now.day , now.hour , now.minute, now.second )
     
+    def _SaveToFile( self, filename , theValue ):
+        f = file( filename , "w" )
+        f.write(theValue)
+        f.close()
+        
+    def _LoadFromFile( self, filename ):
+        try:
+            f = io.open( filename , "r" )
+            x = f.readline()
+            f.close()
+            return x
+        except:
+            return 0
+
+
     def _ParseOneHashTag(self , hashTag):
         forma = """
 INSERT INTO facts ( description , image_url , hash_tag , lat , lng , timestamp , score , created_at , updated_at)
 VALUES (            "%s"        , "%s"        , "%s"     , %s  , %s  , "%s" ,  0 , "%s" , "%s"  )
                 """
-        tweeterData = self.tweeter.CrawlHashTag(hashTag)
+        tweeterData = self.tweeter.CrawlHashTag(hashTag , self._LoadFromFile( hashTag + ".cache2" ) )
         tweets = tweeterData["results"]
         now = self._SqlNow()
         
-        
+        if len(tweets) == 0:
+            return;
+        maxId = "%s" % tweets[0]["id"]
+
+        self._SaveToFile( hashTag + ".cache2" , maxId )
+        #print_r( tweeterData ) 
+
         for tweet in tweets:
             parsedData = TweeterParser( tweet )
             if parsedData.HasImage():

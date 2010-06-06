@@ -75,7 +75,7 @@ class HttpSlave:
         if fileName=="":
             #parsedUrl = urlparse.urlparse( url )
             #nameHash = "data_%s_%s_%d.html"  % ( parsedUrl.netloc  , data[0:15] , len(data) )
-            nameHash = hashlib.md5( url  ).hexdigest() + ".cache.txt"
+            nameHash = hashlib.md5( url  ).hexdigest() + ".cache"
         else:
             nameHash = fileName
 
