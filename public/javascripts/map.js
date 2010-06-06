@@ -9,18 +9,21 @@ function load_map(){
         center: city_center,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
-    for (i in markers) {
-        var m = markers[i];
-        if (m && m.lat) {
-            add_marker(m.lat, m.lng, m.description, m.url, m.kind, m.image_url);
+    listener = google.maps.event.addListener(map, 'tilesloaded', function(event){
+        google.maps.event.removeListener(listener);
+        for (i in markers) {
+            var m = markers[i];
+            if (m && m.lat) {
+                add_marker(m.lat, m.lng, m.description, m.url, m.kind, m.image_url);
+            }
         }
-    }
+    });
 }
 
 function add_marker(lat, lng, title, url, kind, photo){
     var latlng = new google.maps.LatLng(lat, lng);
     var infowindow = new google.maps.InfoWindow({
-        content: '<div class="div_map_infowindow"><a href="'+url+'" alt="'+title+'" title="'+title+'"><img src="' + photo + '" class="img_map_scaled"></a></div>'
+        content: '<div class="div_map_infowindow"><a href="' + url + '" alt="' + title + '" title="' + title + '"><img src="' + photo + '" class="img_map_scaled"></a></div>'
     });
     infowindows.push(infowindow);
     var marker = new google.maps.Marker({
